@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--to make web responsive -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulating the DOM</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HTML Follows BEM naming conventions
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>Landing Page </h1>
+    </header>
+    <!-- Each Section has an ID (used for the anchor) and
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+    <div class="section__wrapper">
+    <section id="section1" data-nav="About me
+" class="section--active">
+      <div class="landing__container">
+        <h2>About me</h2>
+        <p>My name is Metwally hammam , iam 27 years old i graduated from Advanced Academy with Bachelor's degree Grade A , speciality informations systems. </p>
+
+        <p>Iam working as Software Application 
+Support with 
+experience in all levels 
+of testing, including 
+performance, 
+functional, integration, 
+system, regression, and 
+user acceptance 
+testing. Supportive and 
+enthusiastic team 
+player dedicated to 
+streamlining processes 
+and efficiently resolving 
+project issues with 7 
+years EXP in Software 
+field.</p>
+      </div>
+    </section>
+    <section id="section2" data-nav="Skill Highlights
+">
+      <div class="landing__container">
+        <h2>My Highlights skills </h2>
+<p>-  Fast learner.</p>
+<p>- Communication & Interpersonal Skills.</p>
+<p>- Agile/Scrum methodology.</p>
+<p>- Performance and scalability.</p>
+<p>- Create Presentations and Manuals for projects.</p>             
+<p>- Time Management.</p> 
+<p>- Business Solutions.</p>
+<p>- Troubleshooting Skills.</p>
+<p>- Communication skills. </p>
+<p>- HTML/CSS/JavaScript/WORDPRESS.</p>
+<p>-SQL Query.</p>
+<p>- Oracle Functions ( basic) .</p>
+<p>- API TEST.</p>
+<p>- (IIS) Technology.</p>
+<p>- Servers Management.</p>
+<p>- Cloud Configuration.</p>
+<p>- Network Monitoring.</p>
+<p>- Setup and installing Software on agent’s devices.</p>
+
+      </div>
+    </section>
+    <section id="section3" data-nav="Knowledge">
+      <div class="landing__container">
+        <h2>Knowledge</h2>
+<p>- Health Care management.</p>
+<p>- HR management.</p>
+<p>- Digital Marketing.</p>
+<p>- ERP business knowledge.</p>
+<p>- HTML, CSS , JavaScript (Basics).</p>
+<p>- Financial background.</p>
+<p>- Odoo Applications.</p>
+<p>- Cloud Configuration.</p>
+<p>- Python (basics).</p>
+<p>- Network Security (NOC).</p>
+
+
+      </div>
+    </section>
+
+    <section id="section4" data-nav="Certifications">
+      <div class="landing__container">
+        <h2>Certifications</h2>
+        <p>- Project Management Certification. – LinkedIn (PMI).</p>
+<p>- CompTIA A 220-1001 – LinkedIn.</p>
+<p>- Software Tester Job Profile. – ITI</p>
+<p>- ISTQB Certification. - ITI</p>
+<p>- JavaScript introduction – ITI</p>
+<p>- Web Development challenger – MCIT</p>
+<p>- SQL Developing. – Solo Learn.</p>
+<p>- Google Digital Marketing Certification.- Google </p>
+<p>- Microsoft Technology Associate. - (MTA). - Microsoft</p>
+<p>- Microsoft Certified Solutions Associate - (MCSA). – Microsoft</p>
+<p>- CertificateOfCompletion_Strategic Planning Foundations.- LinkedIn.</p>
+      </div>
+    </section>
+    </div>
+  </main>
+  <footer class="page__footer">
+    <p>&copy Udacity</p>
+  </footer>
+
+</body>
+<script src="./js/app.js" charset="utf-8"></script>
+</html>
