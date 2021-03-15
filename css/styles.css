@@ -1,7 +1,7 @@
 /*
- * body and headers fonts from google 
- * sections same font 
- * 
+ * body and headers fonts from google
+ * sections same font
+ *
  *
 */
 
@@ -19,7 +19,7 @@ body {
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
+    font-size: 30px;
     margin: 2em 1rem;
 }
 
@@ -33,7 +33,7 @@ h1 {
 h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
-    font-size: 3em;
+    font-size: 30px;
     color: #fff;
 }
 
@@ -44,12 +44,12 @@ p {
 
 /* ---- Layout Rules ---- */
 main {
-    margin: 10vh 1em 10vh;
+    margin: 100px 1em 100px;
 }
 
 .main-hero {
     min-height: 40vh;
-    padding-top: 3em;
+    padding-top: 30px;
 }
 
 section {
@@ -65,37 +65,37 @@ section {
 
 }
 
-.navbar__menu ul {
+.navigator01 ul {
     padding-left: 0;
     margin: 0;
     text-align: right;
     display: flex;
 }
 
-.navbar__menu li {
+.navigator01 li {
     display: inline-block;
 }
 
-.navbar__menu .menu__link {
+.navigator01 .menucontent01 {
     display: block;
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: #003b5d;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #ccc;
-    color: #000;
+.navigator01 .menucontent01:hover {
+    background: #b0a8b3;
+    color: #605555;
     transition: ease 0.3s all;
 }
 
-.navbar__menu .menu__link.nav-item--active:hover {
+.navigator01 .menucontent01.activeitems:hover {
     background: #333;
-    color: #fff;
+    color: #000;
 }
 
-.navbar__menu .nav-item--active {
+.navigator01 .activeitems {
   background: #333;
   color: #fff;
   transition: ease 0.3s all;
@@ -103,8 +103,8 @@ section {
 }
 
 /* Header Styles */
-.page__header {
-    background: #fff;
+.header01 {
+    background: #9fb5b6;
     position: fixed;
     top: 0;
     width: 100%;
@@ -112,32 +112,32 @@ section {
 }
 
 /* Footer Styles */
-.page__footer {
-    background: #000;
-    padding: 3em;
+.menucontent01 {
+    background: #9fb5b6;
+    padding: 30px;
     color: #fff;
 }
 
-.page__footer p{
+.menucontent01 p{
     color: #fff;
 }
 
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
-.landing__container {
+.maincontainer {
     padding: 1em;
     text-align: left;
 }
 
 @media only screen and (min-width: 35em){
-    .landing__container {
-        max-width: 50em;
+    .maincontainer {
+        max-width: 500px;
         padding: 4em;
     }
 }
 
-section:nth-of-type(even) .landing__container {
+section:nth-of-type(even) .maincontainer {
     margin-right: 0;
     margin-left: auto;
     text-align: right;
@@ -146,7 +146,7 @@ section:nth-of-type(even) .landing__container {
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
-section:nth-of-type(odd) .landing__container::before {
+section:nth-of-type(odd) .maincontainer::before {
     content: '';
     background: rgba(255, 255, 255, 0.187);
     position: absolute;
@@ -158,22 +158,22 @@ section:nth-of-type(odd) .landing__container::before {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(even) .landing__container::before {
+section:nth-of-type(even) .maincontainer::before {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
-    top: 3em;
-    right: 3em;
+    top: 30px;
+    right: 30px;
     z-index: -5;
-    width: 10vh;
-    height: 10vh;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n) .landing__container::after {
+section:nth-of-type(3n) .maincontainer::after {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
@@ -181,23 +181,37 @@ section:nth-of-type(3n) .landing__container::after {
     right: 0;
     bottom: 0;
     z-index: -5;
-    width: 10vh;
-    height: 10vh;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n + 1) .landing__container::after {
+section:nth-of-type(3n + 1) .maincontainer::after {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
-    right: 20vw;
-    bottom: -5em;
-    z-index: -5;
-    width: 15vh;
-    height: 15vh;
+    right: 40px;
+    bottom: -15px;
+    z-index: -15;
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+section:nth-of-type(3n + 1) .maincontainer::after {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    right: 40px;
+    bottom: -15px;
+    z-index: -20;
+    width: 30vh;
+    height: 30vh;
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
@@ -206,18 +220,18 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-/* Note: section--active class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.section--active {
+/* Note: activediv class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.activediv {
     background: white;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.section--active .landing__container::before {
+section.activediv .maincontainer::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.section--active .landing__container::after {
+section.activediv .maincontainer::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
