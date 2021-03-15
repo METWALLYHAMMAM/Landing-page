@@ -18,16 +18,16 @@
  *Vars to menu and top sections
  * vars links with css
 */
-const navbarMenu = document.querySelector('.navbar__menu');
-const sectionWrapper = document.querySelector('.section__wrapper');
-const navbarListContainer = document.querySelector('#navbar__list');
+const navbarMenu = document.querySelector('.navigator01');
+const sectionWrapper = document.querySelector('.sectionmoving');
+const navbarListContainer = document.querySelector('#navbar01');
 let allSections = [];
 let allNavItems = [];
 let activeSection = null;
 let activeNavItem = null;
 const classEnums = {
-  SECTION_ACTIVE: 'section--active',
-  NAV_ACTIVE: 'nav-item--active',
+  SECTION_ACTIVE: 'activediv',
+  NAV_ACTIVE: 'activeitems',
 };
 
 const intersectionOptions = {
@@ -63,7 +63,7 @@ activeSection.classList.add(classEnums.SECTION_ACTIVE);
 }
 
 function getNavItemView(itemName, index) {
-  return `<li class="menu__link" id="navitem${index}" data-sectionid="section${index}">${itemName}</li>`;
+  return `<li class="menucontent01" id="navitem${index}" data-sectionid="section${index}">${itemName}</li>`;
 }
 
 function populateNav(items) {
@@ -143,7 +143,7 @@ function init() {
  *
 */
 
-// Build menu 
+// Build menu
 
 // Scroll to section on link click
 
