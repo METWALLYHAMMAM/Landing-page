@@ -20,10 +20,13 @@ Updateing history
 */
 
 /**
- * Define Global Variables
- *Vars to menu and top sections
- * vars links with css
+* @description Represents a Navigator and sections
+* @constructor
+* @param {navigator01} navigator01 - navigator bar
+* @param {sectionmoving} sectionmoving -to select sections while moving
+* @param {navbar01} navbar01 -to select current titles in navigator bar
 */
+
 const navbarMenu = document.querySelector('.navigator01');
 const sectionWrapper = document.querySelector('.sectionmoving');
 const navbarListContainer = document.querySelector('#navbar01');
@@ -39,6 +42,8 @@ const classEnums = {
 const intersectionOptions = {
   threshold: 0.8,
 };
+/*it's that instead on toggling the target visibility,
+i want to make an call to an endpoint to retrieve the data and do action.*/
 function intersectionCallback(entries, potat) {
   //console.log(entries); test
   if(entries[0].isIntersecting) {
@@ -47,9 +52,7 @@ function intersectionCallback(entries, potat) {
 }
 const observer = new IntersectionObserver(intersectionCallback, intersectionOptions);
 /**
- * End Global Variables
- * Start Helper Functions
- *
+ * to select sections if lenght = 0 return all sections
 */
 function getAllSections() {
   if(allSections.length === 0) {
@@ -57,7 +60,7 @@ function getAllSections() {
   }
   return allSections;
 }
-
+// to select the active section per scroll
 function activateClickedItem() {
 const oldActiveSection = document.querySelector(`.${classEnums.SECTION_ACTIVE}`);
 oldActiveSection.classList.remove(classEnums.SECTION_ACTIVE);
@@ -81,10 +84,9 @@ function getSectionInfo(section) {
   return section.dataset.nav || 'For test';
 }
 
-//console.dir(getAllSections().forEach(getSectionInfo)) - to test
+//console.dir(getAllSections().forEach(getSectionInfo)) - to test under test
 /**
- * End Helper Functions
- * Begin Main Functions
+ 
  * functions related to lesson 4#
 */
 
@@ -114,7 +116,7 @@ function init() {
   allNavItems[0].classList.add(classEnums.NAV_ACTIVE);
   console.log(allNavItems)
 }
-
+// its return li#navitem4.menucontent01 to select whhat is the current section i clicked
 function scrollToElement(element) {
   const { x, y, top } = element.getBoundingClientRect();
   window.scrollTo({
@@ -123,8 +125,8 @@ function scrollToElement(element) {
     behavior: 'smooth',
   })
 }
-// $('body').scrollspy({target: ".navbar"})
 
+// to return what navitem is clicked by select menucontent01 from HTML
 function handleNavItemClick(navEvent) {
   const correspondingSectionID = navEvent.target.dataset.sectionid;
   activeSection = document.querySelector(`#${correspondingSectionID}`);
@@ -141,7 +143,8 @@ function handleNavItemClick(navEvent) {
 // build the nav
 
 // Add class 'active' to section when near top of viewport - active 1 - done tested
-/*TESTing funcition - Faild
+/*
+TESTing funcition - Faild
 loop scrolls
 1- for (var i = 0; i < array.length; i++) {
   array[i]
