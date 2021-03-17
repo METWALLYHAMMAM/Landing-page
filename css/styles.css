@@ -1,8 +1,8 @@
 /*
  * body and headers fonts from google
  * sections same font
- *
- *
+ * 11032021 Update Shapes styles
+ * 12032021 Updating colors
 */
 
 
@@ -11,28 +11,28 @@ body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: sans-serif;
     color: #fff;
 }
 
 
 /* Typeography General*/
 h1 {
-    font-family: 'Fira Sans', sans-serif;
+    font-family:  sans-serif;
     font-size: 30px;
-    margin: 2em 1rem;
+    margin: 20px 10px;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
-        margin: 2em 4rem 1em;
+        margin: 20px 40px 10px;
     }
 }
 
 h2 {
     border-bottom: 1px solid #cc1;
-    font-family: 'Oxygen', Sans-Serif;
+    font-family: 'a', Sans-Serif;
     font-size: 30px;
     color: #fff;
 }
@@ -43,25 +43,25 @@ p {
 }
 
 /* ---- Layout Rules ---- */
-main {
+/* main {
     margin: 100px 1em 100px;
 }
 
 .main-hero {
     min-height: 40vh;
     padding-top: 30px;
-}
+} */
 
 section {
     position: relative;
-    min-height: 80vh;
+    min-height: 100px;
 }
 
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__container {
+.navigator01 {
 
 }
 
@@ -81,11 +81,11 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #003b5d;
+    color: #d2e8ed;
 }
 
 .navigator01 .menucontent01:hover {
-    background: #b0a8b3;
+    background: rgba(154, 154, 154, 1);
     color: #605555;
     transition: ease 0.3s all;
 }
@@ -96,7 +96,7 @@ section {
 }
 
 .navigator01 .activeitems {
-  background: #333;
+  background: #aee2e0;
   color: #fff;
   transition: ease 0.3s all;
   pointer-events: none;
@@ -104,17 +104,24 @@ section {
 
 /* Header Styles */
 .header01 {
-    background: #9fb5b6;
+    background: #000000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+/* Heads styles */
+}.h201{
+  background: #000000;
+  font-family: monospace;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
 }
-
 /* Footer Styles */
 .menucontent01 {
-    background: #9fb5b6;
-    padding: 30px;
+    background: #000000;
+    padding: 300px;
     color: #fff;
 }
 
@@ -208,15 +215,29 @@ section:nth-of-type(3n + 1) .maincontainer::after {
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
     right: 40px;
-    bottom: -15px;
+    bottom: -20px;
     z-index: -20;
     width: 30vh;
     height: 30vh;
     border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
+    opacity: 1;
+    /* transition: ease 0.5s all; */
 }
 
+/* section:nth-child(3n+5) .maincontainer::after{
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+  position: absolute;
+  right: 40px;
+  bottom: -20px;
+  z-index: -20;
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  opacity: 10;
+  transition: ease 0.5s all;
+} */
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
@@ -227,7 +248,7 @@ section.activediv {
 }
 
 section.activediv .maincontainer::before {
-    opacity: 1;
+    /* opacity: 1; */
     animation: rotate 4s linear 0s infinite forwards;
 }
 
