@@ -1,5 +1,11 @@
 /**
- *
+Updateing history
+ * 12032021 Apply Scroll func
+ * 13032021 apply hover func
+ * 14032021 apply active sections
+ * 15032021 Fix scroll issue
+ * 16032021 fix resolution issue
+
  * Manipulating the DOM exercise.
  * Exercise programmatically builds navigation,
  * scrolls to anchors from navigation,
@@ -23,8 +29,8 @@ const sectionWrapper = document.querySelector('.sectionmoving');
 const navbarListContainer = document.querySelector('#navbar01');
 let allSections = [];
 let allNavItems = [];
-let activeSection = null;
-let activeNavItem = null;
+let activeSection = [];
+let activeNavItem = [];
 const classEnums = {
   SECTION_ACTIVE: 'activediv',
   NAV_ACTIVE: 'activeitems',
@@ -72,7 +78,7 @@ navbarListContainer.innerHTML = items;
 
 function getSectionInfo(section) {
   console.log(section.dataset.nav)
-  return section.dataset.nav || 'insert racist comment here';
+  return section.dataset.nav || 'For test';
 }
 
 //console.dir(getAllSections().forEach(getSectionInfo)) - to test
@@ -94,27 +100,6 @@ function handleIntersection(section) {
   activateClickedItem()
 }
 
-function scrollToElement(element) {
-  const { x, y, top } = element.getBoundingClientRect();
-  window.scrollTo({
-    top: document.documentElement.scrollTop + y,
-    left: x,
-    behavior: 'smooth',
-  })
-}
-
-function handleNavItemClick(navEvent) {
-  const correspondingSectionID = navEvent.target.dataset.sectionid;
-  activeSection = document.querySelector(`#${correspondingSectionID}`);
-  activeNavItem = navEvent.target;
-  console.dir(activeNavItem)
-  // for mobile devices
-  if(window.outerWidth <= 786) {
-      activateClickedItem();
-  }
-  scrollToElement(activeSection)
-}
-
 function init() {
   let navHTML = '';
   getAllSections().forEach((section, index) => {
@@ -129,10 +114,41 @@ function init() {
   allNavItems[0].classList.add(classEnums.NAV_ACTIVE);
   console.log(allNavItems)
 }
+
+function scrollToElement(element) {
+  const { x, y, top } = element.getBoundingClientRect();
+  window.scrollTo({
+    top: document.documentElement.scrollTop + y,
+    left: x,
+    behavior: 'smooth',
+  })
+}
+// $('body').scrollspy({target: ".navbar"})
+
+function handleNavItemClick(navEvent) {
+  const correspondingSectionID = navEvent.target.dataset.sectionid;
+  activeSection = document.querySelector(`#${correspondingSectionID}`);
+  activeNavItem = navEvent.target;
+  console.dir(activeNavItem)
+  // for mobile devices
+  if(window.outerWidth <= 786) {
+      activateClickedItem();
+  }
+  scrollToElement(activeSection)
+}
+
+
 // build the nav
 
 // Add class 'active' to section when near top of viewport - active 1 - done tested
-
+/*TESTing funcition - Faild
+loop scrolls
+1- for (var i = 0; i < array.length; i++) {
+  array[i]
+  var current = document.getElementsByClassName (*activeitems*)
+  current [0].className = current
+}
+*/
 
 // Scroll to anchor ID using scrollTO event - done tested
 
